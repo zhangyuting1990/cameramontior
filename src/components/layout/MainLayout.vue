@@ -4,27 +4,29 @@
       <div class="header-left">
         <div class="logo">📷 摄像头系统</div>
       </div>
-      <div class="header-right">
-        <tiny-button size="small" @click="navigateTo('camera')">摄像头</tiny-button>
-        <tiny-button size="small" @click="navigateTo('media')">媒体库</tiny-button>
-      </div>
+      <nav class="header-nav">
+        <router-link to="/camera" class="nav-item">
+          <span class="nav-icon">📷</span>
+          <span class="nav-text">摄像头</span>
+        </router-link>
+        <router-link to="/media" class="nav-item">
+          <span class="nav-icon">📁</span>
+          <span class="nav-text">媒体库</span>
+        </router-link>
+        <router-link to="/inventory" class="nav-item">
+          <span class="nav-icon">📋</span>
+          <span class="nav-text">盘点管理</span>
+        </router-link>
+      </nav>
     </header>
     
     <main class="layout-main">
-      <slot />
+      <router-view />
     </main>
   </div>
 </template>
 
 <script setup lang="ts">
-import { useRouter } from 'vue-router'
-import { TinyButton } from '@opentiny/vue'
-
-const router = useRouter()
-
-function navigateTo(path: string) {
-  router.push(`/${path}`)
-}
 </script>
 
 <style scoped lang="scss">
@@ -56,9 +58,39 @@ function navigateTo(path: string) {
   color: #333;
 }
 
-.header-right {
+.header-nav {
   display: flex;
-  gap: 12px;
+  gap: 8px;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  color: #666;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: all 0.2s;
+
+  &:hover {
+    background: #f5f7fa;
+    color: #333;
+  }
+
+  &.router-link-active {
+    background: #ecf5ff;
+    color: #409eff;
+    font-weight: 500;
+  }
+}
+
+.nav-icon {
+  font-size: 18px;
+}
+
+.nav-text {
+  font-size: 14px;
 }
 
 .layout-main {

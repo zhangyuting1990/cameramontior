@@ -14,6 +14,21 @@ const routes = [
     path: '/media',
     name: 'Media',
     component: () => import('@/views/MediaView.vue')
+  },
+  {
+    path: '/inventory',
+    name: 'Inventory',
+    component: () => import('@/views/InventoryView.vue')
+  },
+  {
+    path: '/inventory/scan',
+    name: 'InventoryScan',
+    component: () => import('@/views/InventoryScanView.vue')
+  },
+  {
+    path: '/inventory/records',
+    name: 'InventoryRecords',
+    component: () => import('@/views/InventoryRecordsView.vue')
   }
 ]
 
