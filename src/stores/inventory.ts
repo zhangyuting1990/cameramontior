@@ -151,6 +151,14 @@ export const useInventoryStore = defineStore('inventory', () => {
     }
   }
 
+  function updateRecordNotes(recordId: string, notes: string): void {
+    const record = records.value.find(r => r.id === recordId)
+    if (record) {
+      record.notes = notes
+      saveToStorage()
+    }
+  }
+
   function setCurrentTask(taskId: string | null): void {
     currentTaskId.value = taskId
   }
@@ -272,6 +280,7 @@ export const useInventoryStore = defineStore('inventory', () => {
     addRecord,
     deleteTask,
     deleteRecord,
+    updateRecordNotes,
     setCurrentTask,
     getTaskRecords,
     exportData,

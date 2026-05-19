@@ -207,10 +207,7 @@ function handleEditNotes(record: InventoryRecord) {
 }
 
 function handleSaveNotes(recordId: string) {
-  const record = records.value.find(r => r.id === recordId)
-  if (record) {
-    record.notes = editingNotes.value
-  }
+  inventoryStore.updateRecordNotes(recordId, editingNotes.value)
   editingId.value = null
   TinyMessage.success('备注已保存')
 }

@@ -112,7 +112,7 @@ export class CameraService {
           'video/webm'
         ]
 
-        const mimeType = options?.mimeType || mimeTypes.find(type => MediaRecorder.isTypeSupported(type))
+        const mimeType = options?.mimeType || mimeTypes.find(type => MediaRecorder.isTypeSupported(type)) || 'video/webm'
 
         this.recordedChunks = []
         this.mediaRecorder = new MediaRecorder(this.stream, {
