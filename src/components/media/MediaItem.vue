@@ -43,6 +43,7 @@
 
 <script setup lang="ts">
 import { computed } from 'vue'
+import { storeToRefs } from 'pinia'
 import { useMediaStore } from '@/stores/media'
 import { TinyCheckbox, TinyButton } from '@opentiny/vue'
 import type { MediaItem } from '@/types/media'
@@ -60,7 +61,7 @@ const emit = defineEmits<{
 }>()
 
 const mediaStore = useMediaStore()
-const { viewMode } = mediaStore
+const { viewMode } = storeToRefs(mediaStore)
 
 const isListMode = computed(() => viewMode === 'list')
 

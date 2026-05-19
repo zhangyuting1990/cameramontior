@@ -20,11 +20,12 @@
 
 <script setup lang="ts">
 import { ref, watch, onMounted, onUnmounted } from 'vue'
+import { storeToRefs } from 'pinia'
 import { useCameraStore } from '@/stores/camera'
 
 const videoRef = ref<HTMLVideoElement | null>(null)
 const cameraStore = useCameraStore()
-const { stream, isActive, isMirror, isRecording, recordingTime } = cameraStore
+const { stream, isActive, isMirror, isRecording, recordingTime } = storeToRefs(cameraStore)
 
 function formatTime(ms: number): string {
   const seconds = Math.floor(ms / 1000)

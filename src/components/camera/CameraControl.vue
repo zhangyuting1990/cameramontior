@@ -59,6 +59,7 @@
 
 <script setup lang="ts">
 import { ref, watch } from 'vue'
+import { storeToRefs } from 'pinia'
 import { useCameraStore } from '@/stores/camera'
 import { useMediaStore } from '@/stores/media'
 import { TinyButton, TinySelect, TinyOption } from '@opentiny/vue'
@@ -66,7 +67,8 @@ import { TinyMessage } from '@opentiny/vue'
 
 const cameraStore = useCameraStore()
 const mediaStore = useMediaStore()
-const { devices, isActive, isMirror, isRecording, currentDeviceId, startCamera, stopCamera, capturePhoto, startRecording, stopRecording, toggleMirror, switchCamera } = cameraStore
+const { devices, isActive, isMirror, isRecording, currentDeviceId } = storeToRefs(cameraStore)
+const { startCamera, stopCamera, capturePhoto, startRecording, stopRecording, toggleMirror, switchCamera } = cameraStore
 
 const selectedDeviceId = ref<string | null>(null)
 

@@ -63,6 +63,7 @@
 
 <script setup lang="ts">
 import { onMounted } from 'vue'
+import { storeToRefs } from 'pinia'
 import { useMediaStore } from '@/stores/media'
 import { TinyButton, TinyButtonGroup, TinySelect, TinyOption, TinyMessage } from '@opentiny/vue'
 import MediaItem from './MediaItem.vue'
@@ -74,7 +75,9 @@ const {
   isLoading,
   viewMode,
   filterType,
-  hasSelected,
+  hasSelected
+} = storeToRefs(mediaStore)
+const {
   loadMedia,
   deleteMedia,
   batchDelete,

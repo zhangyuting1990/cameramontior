@@ -70,11 +70,13 @@
 
 <script setup lang="ts">
 import { ref, computed } from 'vue'
+import { storeToRefs } from 'pinia'
 import { useCameraStore } from '@/stores/camera'
 import { TinySlider, TinySelect, TinyOption, TinyButton } from '@opentiny/vue'
 
 const cameraStore = useCameraStore()
-const { params, updateParams } = cameraStore
+const { params } = storeToRefs(cameraStore)
+const { updateParams } = cameraStore
 
 const exposureValue = ref<string | number>('auto')
 const whiteBalanceValue = ref<string | number>('auto')
