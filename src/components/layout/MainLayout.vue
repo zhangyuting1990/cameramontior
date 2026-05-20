@@ -34,7 +34,7 @@
   display: flex;
   flex-direction: column;
   height: 100vh;
-  background: #f0f2f5;
+  background: #0f0f1a;
 }
 
 .layout-header {
@@ -42,9 +42,10 @@
   justify-content: space-between;
   align-items: center;
   padding: 0 24px;
-  height: 60px;
-  background: #fff;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  height: 56px;
+  background: #1a1a2e;
+  border-bottom: 1px solid #2a2a3e;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
 .header-left {
@@ -53,14 +54,15 @@
 }
 
 .logo {
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 600;
-  color: #333;
+  color: #e0e0e0;
+  letter-spacing: 1px;
 }
 
 .header-nav {
   display: flex;
-  gap: 8px;
+  gap: 4px;
 }
 
 .nav-item {
@@ -68,25 +70,26 @@
   align-items: center;
   gap: 6px;
   padding: 8px 16px;
-  color: #666;
+  color: #888;
   text-decoration: none;
   border-radius: 6px;
   transition: all 0.2s;
+  font-size: 14px;
 
   &:hover {
-    background: #f5f7fa;
-    color: #333;
+    background: #252540;
+    color: #e0e0e0;
   }
 
   &.router-link-active {
-    background: #ecf5ff;
+    background: rgba(64, 158, 255, 0.15);
     color: #409eff;
     font-weight: 500;
   }
 }
 
 .nav-icon {
-  font-size: 18px;
+  font-size: 16px;
 }
 
 .nav-text {
@@ -96,6 +99,6 @@
 .layout-main {
   flex: 1;
   overflow: hidden;
-  padding: 16px;
+  padding: 12px;
 }
 </style>

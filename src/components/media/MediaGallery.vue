@@ -46,7 +46,7 @@
 
     <div
       v-else
-      :class="['gallery-content', `viewMode === 'grid' ? 'grid-view' : 'list-view'"
+      :class="['gallery-content', `viewMode === 'grid' ? 'grid-view' : 'list-view'`]" 
     >
       <MediaItem
         v-for="item in items"

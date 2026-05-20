@@ -1,10 +1,7 @@
 <template>
-  <MainLayout>
-    <RecordList />
-  </MainLayout>
+  <RecordList />
 </template>
 
 <script setup lang="ts">
-import MainLayout from '@/components/layout/MainLayout.vue'
 import RecordList from '@/components/inventory/RecordList.vue'
 </script>

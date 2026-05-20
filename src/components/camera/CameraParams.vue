@@ -115,19 +115,19 @@ function handleReset() {
 <style scoped lang="scss">
 .camera-params {
   padding: 16px;
-  background: #f5f7fa;
+  background: transparent;
   border-radius: 8px;
 }
 
 .params-title {
   margin: 0 0 16px 0;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 600;
-  color: #333;
+  color: #e0e0e0;
 }
 
 .param-item {
-  margin-bottom: 20px;
+  margin-bottom: 16px;
 
   &:last-child {
     margin-bottom: 0;
@@ -135,15 +135,15 @@ function handleReset() {
 }
 
 .param-label {
-  margin-bottom: 8px;
-  font-size: 14px;
-  color: #666;
+  margin-bottom: 6px;
+  font-size: 12px;
+  color: #aaa;
 }
 
 .params-actions {
-  margin-top: 24px;
-  padding-top: 16px;
-  border-top: 1px solid #e0e0e0;
+  margin-top: 16px;
+  padding-top: 12px;
+  border-top: 1px solid #2a2a3e;
   text-align: center;
 }
 </style>

@@ -1,6 +1,5 @@
 <template>
-  <MainLayout>
-    <div class="inventory-view">
+  <div class="inventory-view">
       <div class="view-header">
         <h2 class="view-title">盘点任务管理</h2>
       </div>
@@ -13,12 +12,10 @@
         <TaskList @create="showCreateForm = true" />
       </div>
     </div>
-  </MainLayout>
 </template>
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import MainLayout from '@/components/layout/MainLayout.vue'
 import TaskConfig from '@/components/inventory/TaskConfig.vue'
 import TaskList from '@/components/inventory/TaskList.vue'
 
